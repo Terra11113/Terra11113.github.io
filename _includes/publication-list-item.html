@@ -1,0 +1,46 @@
+{% include base_path %}
+
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+
+<article class="publication-card" style="display:flex; gap:1.35rem; align-items:flex-start; margin:1.3rem 0 1.8rem;" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  {% if post.thumbnail %}
+    <a class="publication-card__thumb" style="display:block; flex:0 0 230px; max-width:230px; margin-top:0.25rem;" href="{{ base_path }}{{ post.url }}" rel="permalink">
+      <img src="{{ post.thumbnail }}" style="display:block; width:230px; max-width:230px; height:auto; border:1px solid #d8d8d8;" alt="{{ post.title }}">
+    </a>
+  {% endif %}
+
+  <div class="publication-card__body" style="flex:1 1 auto;">
+    <h2 class="publication-card__title" style="margin:0 0 0.25rem; font-size:1.15em; line-height:1.32;" itemprop="headline">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    </h2>
+
+    {% if post.authors %}
+      <p class="publication-card__authors" style="margin:0.18rem 0; line-height:1.35;">{{ post.authors }}</p>
+    {% endif %}
+
+    {% if post.publication_info %}
+      <p class="publication-card__venue" style="margin:0.18rem 0; line-height:1.35;">{{ post.publication_info }}</p>
+    {% elsif post.venue %}
+      <p class="publication-card__venue" style="margin:0.18rem 0; line-height:1.35;"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+    {% endif %}
+
+    {% if post.note %}
+      <p class="publication-card__note" style="margin:0.18rem 0; line-height:1.35;">{{ post.note }}</p>
+    {% endif %}
+
+    <div class="publication-card__links" style="display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:0.7rem;">
+      {% if post.paperurl %}
+        <a class="publication-card__button" style="display:inline-block; padding:0.22rem 0.6rem; border:1px solid #2f7f8f; border-radius:3px; background:#2f7f8f; color:#fff; line-height:1.2; text-decoration:none;" href="{{ post.paperurl }}">PDF</a>
+      {% endif %}
+      {% if post.supplementurl %}
+        <a class="publication-card__button" style="display:inline-block; padding:0.22rem 0.6rem; border:1px solid #2f7f8f; border-radius:3px; background:#2f7f8f; color:#fff; line-height:1.2; text-decoration:none;" href="{{ post.supplementurl }}">Supplemental Document</a>
+      {% endif %}
+      {% if post.officialurl %}
+        <a class="publication-card__button" style="display:inline-block; padding:0.22rem 0.6rem; border:1px solid #2f7f8f; border-radius:3px; background:#2f7f8f; color:#fff; line-height:1.2; text-decoration:none;" href="{{ post.officialurl }}">Journal Page</a>
+      {% endif %}
+      {% if post.doi %}
+        <a class="publication-card__button" style="display:inline-block; padding:0.22rem 0.6rem; border:1px solid #2f7f8f; border-radius:3px; background:#2f7f8f; color:#fff; line-height:1.2; text-decoration:none;" href="https://doi.org/{{ post.doi }}">DOI</a>
+      {% endif %}
+    </div>
+  </div>
+</article>

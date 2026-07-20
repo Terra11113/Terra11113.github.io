@@ -1,0 +1,354 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="55%" stop-color="#edf5ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="panelBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="panelGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff6ea"/>
+    </linearGradient>
+    <linearGradient id="mirrorFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dff4ff"/>
+      <stop offset="55%" stop-color="#b7dce9"/>
+      <stop offset="100%" stop-color="#88adbd"/>
+    </linearGradient>
+    <linearGradient id="stageGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#566271"/>
+      <stop offset="100%" stop-color="#141b24"/>
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#17395c" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#1f64a6"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#b88916"/>
+    </marker>
+    <clipPath id="distortionCrop">
+      <rect x="58" y="640" width="600" height="128" rx="14"/>
+    </clipPath>
+    <style>
+      .panel { fill: url(#panelBlue); stroke: #2c70b2; stroke-width: 2.3; filter: url(#shadow); }
+      .panelGold { fill: url(#panelGold); stroke: #c48b2b; stroke-width: 2.3; filter: url(#shadow); }
+      .box { fill: #ffffff; stroke: #a7c1dd; stroke-width: 1.7; }
+      .dashBox { fill: #ffffff; stroke: #95b7d8; stroke-width: 1.5; stroke-dasharray: 8 7; }
+      .thin { fill: none; stroke: #9eb8d2; stroke-width: 1.2; }
+      .blueArrow { fill: none; stroke: #1f64a6; stroke-width: 3; marker-end: url(#arrowBlue); }
+      .goldArrow { fill: none; stroke: #b88916; stroke-width: 3; marker-end: url(#arrowGold); }
+      .rayBlue { fill: none; stroke: #2386d3; stroke-width: 2.4; }
+      .rayGold { fill: none; stroke: #f0a22f; stroke-width: 2.3; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 700; fill: #17395c; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #4f647a; }
+      .centerTitle { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 700; fill: #17395c; }
+      .centerNote { font-family: Arial, Helvetica, sans-serif; font-size: 13px; fill: #4f647a; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #53687f; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #52677d; }
+      .formula { font-family: Georgia, "Times New Roman", serif; font-size: 19px; fill: #17395c; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1080" fill="url(#bg)"/>
+  <path d="M60 100 C320 20, 560 98, 750 210 S1130 330, 1375 155 S1650 80, 1760 130" class="thin" opacity="0.34"/>
+  <path d="M0 980 C250 880, 520 1005, 820 930 S1240 870, 1540 965 S1740 960, 1800 910" class="thin" opacity="0.35"/>
+
+  <!-- Upper-left: physical simulation -->
+  <rect x="30" y="36" width="760" height="786" rx="26" class="panel"/>
+  <text x="58" y="82" class="label">1. Physical Simulation</text>
+  <text x="58" y="108" class="note">Pose perturbations of the freeform reflector are simulated to reveal</text>
+  <text x="58" y="126" class="note">their effects on target distortion and image quality.</text>
+
+  <!-- projector body -->
+  <g transform="translate(78 204)">
+    <rect x="0" y="54" width="118" height="86" rx="12" fill="#2b333e" stroke="#101821" stroke-width="3"/>
+    <path d="M18 38 L108 50 L108 146 L18 134 Z" fill="#3c4653" stroke="#18222e" stroke-width="3"/>
+    <circle cx="121" cy="96" r="34" fill="#111923" stroke="#536579" stroke-width="4"/>
+    <circle cx="121" cy="96" r="22" fill="#174675"/>
+    <circle cx="121" cy="96" r="10" fill="#9ddcff"/>
+    <rect x="16" y="143" width="94" height="14" rx="5" fill="#151b22"/>
+  </g>
+
+  <!-- lens group -->
+  <g transform="translate(250 214)">
+    <ellipse cx="0" cy="86" rx="14" ry="70" fill="#e9f8ff" stroke="#4f8fbe" stroke-width="2"/>
+    <ellipse cx="55" cy="86" rx="18" ry="82" fill="#e9f8ff" stroke="#4f8fbe" stroke-width="2"/>
+    <ellipse cx="112" cy="86" rx="16" ry="76" fill="#e9f8ff" stroke="#4f8fbe" stroke-width="2"/>
+    <ellipse cx="166" cy="86" rx="14" ry="66" fill="#e9f8ff" stroke="#4f8fbe" stroke-width="2"/>
+  </g>
+
+  <!-- rays from lens to freeform reflector -->
+  <path d="M206 286 C300 256, 396 258, 492 278" class="rayBlue"/>
+  <path d="M206 300 C304 292, 398 296, 494 300" class="rayBlue"/>
+  <path d="M206 314 C300 337, 397 340, 492 322" class="rayBlue"/>
+  <path d="M206 292 C300 278, 398 278, 492 288" class="rayGold"/>
+  <path d="M206 308 C300 318, 398 320, 492 312" class="rayGold"/>
+
+  <!-- editable freeform reflector, mounted style -->
+  <g transform="translate(480 218)">
+    <path d="M18 155 C28 82, 82 41, 158 39 L214 40 C247 42, 271 61, 276 92 C286 148, 255 218, 200 249 C154 276, 88 266, 48 234 C27 217, 15 188, 18 155 Z" fill="#3d464f" stroke="#1d2833" stroke-width="5"/>
+    <path d="M52 153 C64 95, 108 66, 177 64 C224 66, 247 84, 249 112 C253 158, 231 211, 191 236 C154 260, 98 253, 65 226 C51 214, 46 182, 52 153 Z" fill="url(#mirrorFace)" stroke="#24384a" stroke-width="2.5"/>
+    <path d="M73 86 C69 49, 94 31, 122 36 C121 59, 102 79, 73 86 Z" fill="#2d3741" opacity="0.78"/>
+    <circle cx="130" cy="39" r="20" fill="#2d3741" stroke="#1d2833" stroke-width="4"/>
+    <path d="M9 228 C-12 252, -8 281, 18 293 L65 293 C77 285, 72 258, 49 244 Z" fill="#2d3741" stroke="#1d2833" stroke-width="5"/>
+    <path d="M205 244 C237 258, 270 282, 301 291 L259 307 C225 300, 197 275, 190 256 Z" fill="#2d3741" stroke="#1d2833" stroke-width="5"/>
+    <circle cx="31" cy="276" r="13" fill="#f8fbff" stroke="#1d2833" stroke-width="5"/>
+    <circle cx="253" cy="287" r="13" fill="#f8fbff" stroke="#1d2833" stroke-width="5"/>
+    <rect x="126" y="262" width="27" height="52" rx="9" fill="#2d3741" stroke="#1d2833" stroke-width="4"/>
+  </g>
+
+  <!-- image plane: upright and after projector / reflector -->
+  <g transform="translate(652 170)">
+    <rect x="0" y="0" width="80" height="286" fill="#e8edf2" stroke="#27384a" stroke-width="5"/>
+    <rect x="12" y="20" width="56" height="246" fill="#232a33" stroke="#6b7b8d" stroke-width="2"/>
+    <g stroke="#d9ebfa" stroke-width="2">
+      <line x1="24" y1="42" x2="24" y2="236"/>
+      <line x1="41" y1="42" x2="41" y2="236"/>
+      <line x1="58" y1="42" x2="58" y2="236"/>
+      <line x1="18" y1="78" x2="62" y2="78"/>
+      <line x1="18" y1="138" x2="62" y2="138"/>
+      <line x1="18" y1="198" x2="62" y2="198"/>
+    </g>
+  </g>
+  <path d="M616 278 C638 248, 650 216, 665 188" class="rayBlue"/>
+  <path d="M622 306 C647 299, 662 292, 682 285" class="rayBlue"/>
+  <path d="M612 336 C637 372, 652 407, 666 438" class="rayGold"/>
+  <path d="M619 294 C646 274, 663 253, 678 231" class="rayGold"/>
+  <path d="M619 322 C647 339, 663 356, 681 375" class="rayGold"/>
+
+  <!-- pose perturbation row -->
+  <rect x="58" y="508" width="682" height="272" rx="16" class="dashBox"/>
+  <image href="ustp-distortion-reference.png" x="58" y="640" width="600" height="128" preserveAspectRatio="xMidYMid slice" clip-path="url(#distortionCrop)" opacity="0.9"/>
+  <rect x="58" y="640" width="600" height="128" rx="14" fill="none" stroke="#c98d2d" stroke-width="2"/>
+  <g transform="translate(92 536)" stroke="#1f64a6" stroke-width="2" fill="none">
+    <g transform="translate(0 0)">
+      <path d="M15 44 C21 18, 48 12, 72 22 C76 44, 60 70, 32 67 C20 65, 12 56, 15 44 Z" fill="#c2dce8" stroke="#30475d"/>
+      <path d="M18 6 L18 -10 M18 -10 L10 -2 M18 -10 L26 -2"/>
+      <path d="M70 76 L70 92 M70 92 L62 84 M70 92 L78 84"/>
+    </g>
+    <g transform="translate(125 0)">
+      <path d="M15 44 C21 18, 48 12, 72 22 C76 44, 60 70, 32 67 C20 65, 12 56, 15 44 Z" fill="#c2dce8" stroke="#30475d"/>
+      <path d="M4 42 L-14 42 M-14 42 L-5 34 M-14 42 L-5 50"/>
+      <path d="M83 42 L101 42 M101 42 L92 34 M101 42 L92 50"/>
+    </g>
+    <g transform="translate(250 0)">
+      <path d="M15 44 C21 18, 48 12, 72 22 C76 44, 60 70, 32 67 C20 65, 12 56, 15 44 Z" fill="#c2dce8" stroke="#30475d"/>
+      <path d="M20 8 C38 -10, 61 -6, 72 14" marker-end="url(#arrowBlue)"/>
+    </g>
+    <g transform="translate(375 0)">
+      <path d="M15 44 C21 18, 48 12, 72 22 C76 44, 60 70, 32 67 C20 65, 12 56, 15 44 Z" fill="#c2dce8" stroke="#30475d"/>
+      <path d="M74 70 C56 92, 28 84, 17 60" marker-end="url(#arrowBlue)"/>
+    </g>
+    <g transform="translate(500 0)">
+      <path d="M15 44 C21 18, 48 12, 72 22 C76 44, 60 70, 32 67 C20 65, 12 56, 15 44 Z" fill="#c2dce8" stroke="#30475d"/>
+      <path d="M10 18 L-6 2 M80 66 L96 82" marker-end="url(#arrowBlue)"/>
+    </g>
+  </g>
+
+  <!-- Upper-right: evaluation and optimization -->
+  <rect x="1010" y="36" width="760" height="786" rx="26" class="panelGold"/>
+  <text x="1038" y="82" class="label">2. Image Evaluation and Iterative Optimization</text>
+  <text x="1038" y="108" class="note">Captured target images are processed to extract distortion and MTF-related metrics,</text>
+  <text x="1038" y="126" class="note">which guide the adaptive update of mirror pose.</text>
+
+  <!-- image -> processing -> evaluation sequence -->
+  <g transform="translate(1046 154)">
+    <rect x="0" y="0" width="170" height="156" rx="12" class="box"/>
+    <text x="22" y="26" class="tiny">Projected image</text>
+    <rect x="24" y="44" width="122" height="86" fill="#101820" stroke="#2e4660" stroke-width="2"/>
+    <g stroke="#edf7ff" stroke-width="2.2">
+      <line x1="50" y1="56" x2="50" y2="118"/>
+      <line x1="84" y1="56" x2="84" y2="118"/>
+      <line x1="118" y1="56" x2="118" y2="118"/>
+      <line x1="36" y1="74" x2="136" y2="74"/>
+      <line x1="36" y1="100" x2="136" y2="100"/>
+    </g>
+    <path d="M182 78 L248 78" class="blueArrow"/>
+
+    <rect x="260" y="0" width="204" height="156" rx="12" class="box"/>
+    <text x="296" y="26" class="tiny">Image processing</text>
+    <rect x="284" y="44" width="156" height="86" fill="#080d12" stroke="#2e4660" stroke-width="2"/>
+    <g stroke="#c9d8e6" stroke-width="1.7" opacity="0.75">
+      <line x1="305" y1="56" x2="305" y2="119"/>
+      <line x1="360" y1="56" x2="360" y2="119"/>
+      <line x1="418" y1="56" x2="418" y2="119"/>
+      <line x1="294" y1="72" x2="430" y2="72"/>
+      <line x1="294" y1="104" x2="430" y2="104"/>
+    </g>
+    <rect x="300" y="56" width="42" height="27" fill="#ff1d1d" opacity="0.88"/>
+    <rect x="354" y="58" width="46" height="24" fill="#11c94f" opacity="0.88"/>
+    <rect x="394" y="92" width="34" height="24" fill="#13d6dc" opacity="0.88"/>
+    <rect x="306" y="94" width="54" height="25" fill="#f4ca18" opacity="0.88"/>
+    <path d="M476 78 L542 78" class="blueArrow"/>
+
+    <rect x="554" y="0" width="170" height="156" rx="12" class="box"/>
+    <text x="588" y="26" class="tiny">Quality metrics</text>
+    <g transform="translate(584 46)">
+      <path d="M0 82 H112" stroke="#5d7186" stroke-width="2"/>
+      <rect x="10" y="28" width="15" height="54" fill="#4c9ed4"/>
+      <rect x="38" y="42" width="15" height="40" fill="#70ad47"/>
+      <rect x="66" y="18" width="15" height="64" fill="#ffc000"/>
+      <rect x="94" y="34" width="15" height="48" fill="#6f58b8"/>
+      <text x="7" y="103" class="tiny">D1</text>
+      <text x="35" y="103" class="tiny">D2</text>
+      <text x="63" y="103" class="tiny">D3</text>
+      <text x="88" y="103" class="tiny">MTF</text>
+    </g>
+  </g>
+
+  <!-- four-block optimization loop -->
+  <g transform="translate(1058 370)">
+    <rect x="0" y="0" width="688" height="400" rx="18" fill="#fffdf9" stroke="#d49a32" stroke-width="2" stroke-dasharray="9 7"/>
+
+    <rect x="40" y="82" width="136" height="136" rx="12" class="box"/>
+    <g transform="translate(54 112)">
+      <path d="M18 48 C24 18, 54 6, 84 18 C92 47, 73 80, 40 78 C25 77, 14 65, 18 48 Z" fill="url(#mirrorFace)" stroke="#25384b" stroke-width="2.2"/>
+      <rect x="25" y="78" width="72" height="18" rx="5" fill="#283342"/>
+      <path d="M56 13 L56 -14" class="blueArrow"/>
+      <path d="M14 52 L-18 52" class="blueArrow"/>
+      <path d="M91 52 L123 52" class="blueArrow"/>
+      <path d="M21 22 C45 -4, 79 1, 100 25" class="goldArrow"/>
+      <path d="M100 70 C76 100, 41 95, 21 72" class="goldArrow"/>
+    </g>
+    <path d="M188 150 L250 150" class="blueArrow"/>
+
+    <rect x="260" y="82" width="136" height="136" rx="12" class="box"/>
+    <g transform="translate(286 106)">
+      <path d="M0 92 H88" stroke="#667b90" stroke-width="2"/>
+      <rect x="8" y="44" width="14" height="48" fill="#4c9ed4"/>
+      <rect x="32" y="24" width="14" height="68" fill="#70ad47"/>
+      <rect x="56" y="58" width="14" height="34" fill="#ffc000"/>
+      <rect x="80" y="36" width="14" height="56" fill="#2f6da3"/>
+    </g>
+    <path d="M408 150 L470 150" class="blueArrow"/>
+
+    <rect x="480" y="82" width="136" height="136" rx="12" class="box"/>
+    <text x="512" y="126" class="formula">J(q,w)</text>
+    <text x="508" y="158" class="formula">Delta q</text>
+    <g transform="translate(510 174)">
+      <rect x="0" y="0" width="14" height="20" fill="#5a9bd4"/>
+      <rect x="25" y="0" width="14" height="20" fill="#70ad47"/>
+      <rect x="50" y="0" width="14" height="20" fill="#ffc000"/>
+      <rect x="75" y="0" width="14" height="20" fill="#ed7d31"/>
+    </g>
+    <path d="M548 230 C530 302, 424 342, 338 310" class="goldArrow"/>
+
+    <rect x="260" y="264" width="170" height="106" rx="12" class="box"/>
+    <g transform="translate(286 282)" fill="none" stroke="#2f73b7" stroke-width="2">
+      <ellipse cx="60" cy="38" rx="58" ry="34"/>
+      <ellipse cx="60" cy="38" rx="40" ry="24"/>
+      <ellipse cx="60" cy="38" rx="21" ry="13"/>
+      <path d="M43 60 L90 20" marker-end="url(#arrowBlue)"/>
+      <circle cx="90" cy="20" r="6" fill="#e24c3b" stroke="none"/>
+      <circle cx="58" cy="44" r="5" fill="#d8a42d" stroke="none"/>
+    </g>
+    <path d="M252 312 C132 304, 82 252, 94 228" class="goldArrow"/>
+  </g>
+
+  <!-- Center circle, drawn above the side panels -->
+  <g transform="translate(900 512)">
+    <circle cx="0" cy="0" r="164" fill="#ffffff" stroke="#2f74b8" stroke-width="3.2"/>
+    <circle cx="0" cy="0" r="142" fill="#ffffff" stroke="#d5a438" stroke-width="3"/>
+    <circle cx="0" cy="0" r="112" fill="#ffffff" stroke="#e5eef7" stroke-width="2"/>
+    <text x="0" y="-34" class="centerTitle" text-anchor="middle">Closed-loop Alignment</text>
+    <text x="0" y="-6" class="centerNote" text-anchor="middle">Simulation-informed evaluation,</text>
+    <text x="0" y="15" class="centerNote" text-anchor="middle">adaptive optimization, and</text>
+    <text x="0" y="36" class="centerNote" text-anchor="middle">experimental actuation</text>
+    <text x="0" y="57" class="centerNote" text-anchor="middle">in one framework.</text>
+  </g>
+
+  <!-- Bottom: practical closed-loop experiment -->
+  <rect x="30" y="842" width="1740" height="210" rx="26" class="panel"/>
+  <text x="58" y="880" class="label">3. Closed-loop Experimental Alignment</text>
+  <text x="430" y="880" class="note">The camera-acquired image is evaluated by the PC, and the optimizer outputs</text>
+  <text x="430" y="898" class="note">the direction and magnitude of reflector motion for the multi-axis stage.</text>
+
+  <!-- projector and image plane -->
+  <g transform="translate(80 902)">
+    <rect x="0" y="52" width="116" height="78" rx="12" fill="#2b333e" stroke="#101821" stroke-width="3"/>
+    <path d="M18 36 L106 48 L106 136 L18 124 Z" fill="#3c4653" stroke="#18222e" stroke-width="3"/>
+    <circle cx="119" cy="91" r="31" fill="#111923" stroke="#536579" stroke-width="4"/>
+    <circle cx="119" cy="91" r="19" fill="#174675"/>
+    <circle cx="119" cy="91" r="8" fill="#9ddcff"/>
+    <rect x="230" y="24" width="64" height="154" fill="#e8edf2" stroke="#27384a" stroke-width="4"/>
+    <rect x="240" y="40" width="44" height="122" fill="#232a33"/>
+    <g stroke="#d9ebfa" stroke-width="1.6">
+      <line x1="251" y1="52" x2="251" y2="152"/><line x1="266" y1="52" x2="266" y2="152"/>
+      <line x1="245" y1="78" x2="279" y2="78"/><line x1="245" y1="118" x2="279" y2="118"/>
+    </g>
+    <path d="M134 84 L240 40" class="rayBlue"/>
+    <path d="M134 92 L240 92" class="rayBlue"/>
+    <path d="M134 100 L240 154" class="rayBlue"/>
+  </g>
+
+  <!-- camera capture -->
+  <path d="M388 980 L482 980" class="blueArrow"/>
+  <g transform="translate(492 910)">
+    <rect x="0" y="28" width="116" height="76" rx="12" fill="#2b333e" stroke="#101821" stroke-width="3"/>
+    <circle cx="60" cy="66" r="28" fill="#111923" stroke="#536579" stroke-width="4"/>
+    <circle cx="60" cy="66" r="16" fill="#174675"/>
+    <rect x="24" y="104" width="72" height="18" rx="6" fill="#151b22"/>
+    <rect x="152" y="0" width="128" height="94" rx="10" class="box"/>
+    <rect x="174" y="17" width="84" height="58" fill="#111820"/>
+    <g stroke="#e7f5ff" stroke-width="2">
+      <line x1="196" y1="27" x2="196" y2="67"/><line x1="232" y1="27" x2="232" y2="67"/>
+      <line x1="184" y1="40" x2="248" y2="40"/><line x1="184" y1="57" x2="248" y2="57"/>
+    </g>
+    <path d="M238 98 L238 142" class="blueArrow"/>
+  </g>
+
+  <!-- PC evaluation -->
+  <path d="M780 980 L874 980" class="blueArrow"/>
+  <g transform="translate(884 900)">
+    <rect x="0" y="12" width="214" height="120" rx="12" fill="#182334" stroke="#34485d" stroke-width="4"/>
+    <rect x="16" y="28" width="182" height="80" fill="#111820" stroke="#5f758c" stroke-width="2"/>
+    <g transform="translate(34 44)">
+      <circle cx="18" cy="18" r="15" fill="#fff" stroke="#2b6faa"/><path d="M7 18 H29 M18 7 V29" stroke="#17395c"/>
+      <circle cx="66" cy="18" r="15" fill="#fff" stroke="#2b6faa"/><path d="M52 30 C60 6, 72 6, 82 30" fill="none" stroke="#17395c"/>
+      <circle cx="114" cy="18" r="15" fill="#fff" stroke="#2b6faa"/><path d="M104 30 L114 8 L126 30" fill="none" stroke="#17395c"/>
+      <circle cx="162" cy="18" r="15" fill="#fff" stroke="#2b6faa"/><path d="M150 28 C157 10, 168 10, 176 28" fill="none" stroke="#17395c"/>
+      <rect x="8" y="55" width="10" height="22" fill="#4c9ed4"/><rect x="35" y="42" width="10" height="35" fill="#70ad47"/>
+      <rect x="62" y="30" width="10" height="47" fill="#ffc000"/><rect x="89" y="50" width="10" height="27" fill="#ed7d31"/>
+    </g>
+    <rect x="75" y="132" width="64" height="10" rx="3" fill="#263647"/>
+  </g>
+
+  <!-- optimizer command -->
+  <path d="M1114 980 L1208 980" class="blueArrow"/>
+  <g transform="translate(1218 912)">
+    <rect x="0" y="0" width="180" height="126" rx="14" class="box"/>
+    <g transform="translate(30 18)" fill="none" stroke="#2f73b7" stroke-width="2">
+      <ellipse cx="60" cy="42" rx="58" ry="34"/>
+      <ellipse cx="60" cy="42" rx="40" ry="23"/>
+      <ellipse cx="60" cy="42" rx="21" ry="12"/>
+      <path d="M43 64 L92 22" marker-end="url(#arrowBlue)"/>
+      <circle cx="92" cy="22" r="6" fill="#e24c3b" stroke="none"/>
+    </g>
+    <g transform="translate(42 86)">
+      <rect x="0" y="0" width="12" height="25" fill="#4c9ed4"/><rect x="24" y="0" width="12" height="36" fill="#70ad47"/>
+      <rect x="48" y="0" width="12" height="18" fill="#ffc000"/><rect x="72" y="0" width="12" height="31" fill="#ed7d31"/>
+    </g>
+  </g>
+
+  <!-- mirror movement command and 6-DOF stage -->
+  <path d="M1410 980 L1500 980" class="blueArrow"/>
+  <g transform="translate(1500 880)">
+    <rect x="64" y="110" width="178" height="48" rx="10" fill="url(#stageGrad)" stroke="#111820" stroke-width="3"/>
+    <rect x="84" y="78" width="138" height="50" rx="9" fill="#2f3b48" stroke="#111820" stroke-width="3"/>
+    <rect x="106" y="52" width="96" height="42" rx="8" fill="#465364" stroke="#111820" stroke-width="3"/>
+    <path d="M112 34 C122 10, 158 3, 190 18 C202 44, 184 74, 148 73 C126 72, 108 57, 112 34 Z" fill="url(#mirrorFace)" stroke="#26384a" stroke-width="3"/>
+    <path d="M151 52 L151 8" class="blueArrow"/>
+    <path d="M84 132 L42 132" class="blueArrow"/>
+    <path d="M224 132 L266 132" class="blueArrow"/>
+    <path d="M100 38 C126 -8, 185 -3, 214 34" class="goldArrow"/>
+    <path d="M217 88 C194 117, 129 116, 100 90" class="goldArrow"/>
+    <path d="M272 54 C297 79, 297 111, 270 134" class="goldArrow"/>
+  </g>
+
+  <path d="M1608 1040 C1220 1084, 630 1082, 176 1030 L176 1030" class="blueArrow"/>
+</svg>
